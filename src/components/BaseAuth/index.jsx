@@ -10,7 +10,7 @@ const BaseAuth = ({ children}) => {
   return (
     <>
       <Layout style={{ minHeight: "100vh" }}>
-        <Content className="content-pages">
+        <Content className="content-pages-auth">
               {children}
         </Content>
       </Layout>

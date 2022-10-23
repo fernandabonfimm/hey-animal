@@ -1,0 +1,14 @@
+.announcement {
+  display: flex;
+  border: none;
+  border-radius: 50px;
+  padding: 1em;
+  color: #fff;
+  background-color: #72aaf7;
+  box-shadow: rgb(167, 228, 159) 0px 5px 20px;
+  margin-top: 50px;
+}
+.announcement:hover {
+  background: linear-gradient(110.55deg, #72aaf7 21.22%, #74d569 68.3%);
+  box-shadow: rgb(167, 228, 159) 0px 5px 40px;
+}

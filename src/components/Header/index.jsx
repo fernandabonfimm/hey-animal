@@ -34,7 +34,7 @@ const HeaderComponent = () => {
           key: "1",
         },
         {
-          label: <a className="menu-item" onClick={() => navigate("/forms")}><MdOutlineBiotech style={{marginRight: 10}}/>Formulário</a>,
+          label: <a className="menu-item" onClick={() => navigate("/search")}><MdOutlineBiotech style={{marginRight: 10}}/>Nova Pesquisa</a>,
           key: "2",
         },
         {
@@ -64,9 +64,9 @@ const HeaderComponent = () => {
           <MdOutlineDashboard style={{ marginRight: 10, fontSize: 20 }} />
           Dashboard
         </button>
-        <button className="buttonDashboard" onClick={() => navigate("/forms")}>
+        <button className="buttonDashboard" onClick={() => navigate("/search")}>
           <MdOutlineBiotech style={{ marginRight: 10, fontSize: 20 }} />
-          Formulário
+          Nova Pesquisa
         </button>
         <Dropdown overlay={menu} className="dropwdown">
             <Space>
