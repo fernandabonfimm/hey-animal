@@ -3,6 +3,7 @@ import { Menu, Dropdown, Layout, Avatar, Space, message } from "antd";
 import { RiUserHeartLine, RiLogoutCircleLine } from "react-icons/ri";
 import "./styles.css";
 import { MdOutlineDashboard, MdOutlineBiotech } from "react-icons/md";
+import {AiOutlineMenu} from 'react-icons/ai';
 import LogoHA from "../../logoHA.png";
 import { useNavigate } from "react-router-dom";
 
@@ -20,6 +21,29 @@ const HeaderComponent = () => {
         {
           label: <a className="menu-item" onClick={() => navigate("/")}><RiLogoutCircleLine style={{marginRight: 10}}/>Sair</a>,
           key: "2",
+        },
+      ]}
+    />
+  );
+
+  const menuresponsive = (
+    <Menu
+      items={[
+        {
+          label: <a className="menu-item" onClick={() => navigate("/dashboard")}><MdOutlineDashboard style={{marginRight: 10}}/>Dashboard</a>,
+          key: "1",
+        },
+        {
+          label: <a className="menu-item" onClick={() => navigate("/forms")}><MdOutlineBiotech style={{marginRight: 10}}/>Formulário</a>,
+          key: "2",
+        },
+        {
+          label: <a className="menu-item" onClick={() => navigate("/profile")}><RiUserHeartLine style={{marginRight: 10}}/>Perfil</a>,
+          key: "3",
+        },
+        {
+          label: <a className="menu-item" onClick={() => navigate("/")}><RiLogoutCircleLine style={{marginRight: 10}}/>Sair</a>,
+          key: "4",
         },
       ]}
     />
@@ -51,6 +75,11 @@ const HeaderComponent = () => {
                 className="Avatar-header"
                 icon={<RiUserHeartLine />}
               />
+            </Space>
+        </Dropdown>
+        <Dropdown overlay={menuresponsive} className="dropwdown-responsive">
+            <Space>
+              <AiOutlineMenu/>
             </Space>
         </Dropdown>
       </Header>

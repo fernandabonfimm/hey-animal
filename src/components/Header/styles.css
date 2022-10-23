@@ -73,3 +73,44 @@
 .menu-item:hover{
   color: #72aaf7;
 }
+
+.dropwdown-responsive{
+  visibility: hidden;
+  display: none;
+}
+
+@media screen and (max-width: 900px){
+  .header-content {
+    padding: 1em 2em 1em 2em;
+  }
+  .buttonDashboard{
+    display: none;
+  }
+  .Avatar-header{
+    display: none;
+  }
+  .dropwdown{
+    display: none;
+  }
+  .dropwdown-responsive{
+    visibility: visible;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 35px;
+  }
+  .dropwdown-responsive:hover{
+    color: #74d569;
+  }
+
+  .logo-header{
+    margin-top: 0px;
+  }
+  
+}
+
+@media screen and (max-width: 500px){
+  .header-content {
+    padding: 1em;
+  }
+}
