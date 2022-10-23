@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import BaseAuth from "../../components/BaseAuth";
 import { useNavigate } from "react-router-dom";
-import { Card } from "antd";
+import { Card, Input } from "antd";
 import LogoHA from "../../logoHA.png";
 import { RiUserHeartLine } from "react-icons/ri";
 import "./styles.css";
@@ -33,7 +33,7 @@ const Register = () => {
           Preencha o formulário para criar uma conta na plataforma.
         </span>
         <span className="label-input">Nome Completo:</span>
-        <input
+        <Input
           type="name"
           placeholder="Digite seu nome completo..."
           id="name"
@@ -42,7 +42,7 @@ const Register = () => {
           onChange={(e) => setName(e.target.value)}
         />
         <span className="label-input">E-mail:</span>
-        <input
+        <Input
           type="email"
           placeholder="example@example.com"
           id="email"
@@ -71,8 +71,7 @@ const Register = () => {
           })}
         </select>
         <span className="label-input">Senha:</span>
-        <input
-          type="password"
+        <Input.Password
           placeholder="Crie uma senha..."
           id="password"
           className="input-login"
@@ -80,10 +79,9 @@ const Register = () => {
           onChange={(e) => setPassword(e.target.value)}
         />
         <span className="label-input">Confirme a Senha:</span>
-        <input
-          type="password"
+        <Input.Password
           placeholder="Confirme sua senha..."
-          id="password"
+          id="confirmPassword"
           className="input-login"
           value={confirmPassword}
           onChange={(e) => setConfirmPassword(e.target.value)}

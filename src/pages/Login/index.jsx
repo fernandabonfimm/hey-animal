@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import BaseAuth from "../../components/BaseAuth";
 import { useNavigate } from "react-router-dom";
-import { Card } from "antd";
+import { Card, Input } from "antd";
 import LogoHA from "../../logoHA.png";
 import { AiOutlineKey, AiOutlineUserAdd } from "react-icons/ai";
 import "./styles.css";
@@ -22,7 +22,7 @@ const Login = () => {
           Preencha o formulário para realizar seu login na plataforma.
         </span>
         <span className="label-input">E-mail:</span>
-        <input
+        <Input
           type="email"
           placeholder="example@example.com"
           id="email"
@@ -31,10 +31,9 @@ const Login = () => {
           onChange={(e) => setEmail(e.target.value)}
         />
         <span className="label-input">Senha:</span>
-        <input
-          type="email"
+        <Input.Password
           placeholder="Digite sua senha..."
-          id="email"
+          id="password"
           className="input-login"
           value={password}
           onChange={(e) => setPassword(e.target.value)}

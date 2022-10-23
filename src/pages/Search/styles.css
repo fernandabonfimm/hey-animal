@@ -6,7 +6,7 @@
   padding: 1em;
 }
 .card-forms:hover {
-  box-shadow: rgba(217, 234, 255, 1) 0px 5px 20px;
+  box-shadow: rgba(217, 234, 255, 1) 0px 5px 40px;
 }
 
 .center {
@@ -44,6 +44,14 @@
     margin-bottom: 10px;
 }
 
+.label-input-hormonio{
+  display: flex;
+  align-items: center;
+  color: #000;
+  font-size: 15px;
+  font-weight: 500;
+}
+
 .input-forms{
     width: 100%;
     margin-top: 10px;
@@ -66,4 +74,14 @@
   font-size: 16px;
   color: #000;
   box-shadow: rgb(235, 235, 235) 0px 5px 10px;
+}
+
+.card-hormonio{
+  margin-top: 20px;
+  border-radius: 15px;
+  border-radius: 1px solid #ededed;
+  cursor: pointer;
+}
+.card-hormonio:hover{
+  box-shadow: rgb(205, 225, 248) 0px 5px 20px;
 }
