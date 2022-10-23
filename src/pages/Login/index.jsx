@@ -38,7 +38,7 @@ const Login = () => {
           value={password}
           onChange={(e) => setPassword(e.target.value)}
         />
-        <span className="forgot-password">
+        <span className="forgot-password" onClick={() => navigate("/forgotpassword")}>
           <AiOutlineKey style={{ marginRight: 5 }} />
           Esqueceu sua senha?
         </span>
