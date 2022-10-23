@@ -12,6 +12,16 @@ const Register = () => {
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
   const [confirmPassword, setConfirmPassword] = useState();
+
+  const profile = [
+    { label: "Estudante", value: "student" },
+    { label: "Professor", value: "teacher" },
+  ];
+
+  const course = [
+    { label: "Médicina Veterinária", value: "vet-med" },
+    { label: "Ciência da Computação", value: "computer-science" },
+  ];
   return (
     <BaseAuth>
       <Card className="card-login">
@@ -40,6 +50,26 @@ const Register = () => {
           value={email}
           onChange={(e) => setEmail(e.target.value)}
         />
+        <span className="label-input">Tipo de Perfil:</span>
+        <select
+          id="profile-type"
+          className="input-login"
+        >
+          <option value="">Selecione</option>
+          {profile.map((data) => {
+            return <option value={data.value}>{data.label}</option>;
+          })}
+        </select>
+        <span className="label-input">Curso:</span>
+        <select
+          id="profile-type"
+          className="input-login"
+        >
+          <option value="">Selecione</option>
+          {course.map((data) => {
+             return <option value={data.value}>{data.label}</option>;
+          })}
+        </select>
         <span className="label-input">Senha:</span>
         <input
           type="password"
@@ -58,7 +88,9 @@ const Register = () => {
           value={confirmPassword}
           onChange={(e) => setConfirmPassword(e.target.value)}
         />
-        <button className="button-login" onClick={() => navigate("/")}>Criar conta</button>
+        <button className="button-login" onClick={() => navigate("/")}>
+          Criar conta
+        </button>
         <span className="forgot-password">
           <RiUserHeartLine style={{ marginRight: 5 }} />
           Já possui uma conta?{" "}

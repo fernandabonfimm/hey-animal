@@ -5,6 +5,7 @@
     border-radius: 15px;
     box-shadow: rgb(152, 189, 231) 0px 5px 20px;
     margin-bottom: 20px;
+    cursor: pointer;
 }
 
 .title-chart{

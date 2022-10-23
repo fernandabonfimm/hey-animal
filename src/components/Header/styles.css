@@ -4,7 +4,7 @@
   justify-content: space-between;
   background-color: #fff;
   height: 100%;
-  padding: 1em 5em 1em 5em;
+  padding: 1.5em 5em 1em 5em;
 }
 
 .buttonDashboard {
@@ -28,7 +28,12 @@
     rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
   background: linear-gradient(110.55deg, #72aaf7 21.22%, #74d569 68.3%);
 }
-
+.dropwdown{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: -10px;
+}
 .Avatar-header {
   display: flex;
   justify-content: center;
@@ -48,6 +53,23 @@
 }
 
 .logo-header{
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 220px;
+  height: 60px;
   cursor: pointer;
+  margin-top: -5px;
+}
+
+.menu-item{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  text-align: center;
+  color: #000;
+  font-size: 17px;
+}
+.menu-item:hover{
+  color: #72aaf7;
 }
