@@ -4,8 +4,10 @@ import { MdOutlineBiotech } from "react-icons/md";
 import { Card, Row, Col, Tag, Checkbox } from "antd";
 import "./styles.css";
 import Announcement from "./components/Announcement";
+import { useNavigate } from "react-router-dom";
 
 const Search = () => {
+  const navigate = useNavigate();
   const [searchName, setSearchName] = useState();
   const [valueInitial, setValueInitial] = useState();
   const [type, setType] = useState();
@@ -273,6 +275,14 @@ const Search = () => {
                     )}
                   </Col>
                 </Row>
+                <div style={{ display: "flex", justifyContent: "center" }}>
+                  <button
+                    onClick={() => navigate("/")}
+                    className="center btn-save"
+                  >
+                    Salvar nova pesquisa
+                  </button>
+                </div>
                 <Announcement />
               </Card>
             </Col>
