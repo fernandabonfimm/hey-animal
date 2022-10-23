@@ -58,7 +58,7 @@ const Register = () => {
           value={confirmPassword}
           onChange={(e) => setConfirmPassword(e.target.value)}
         />
-        <button className="button-login">Criar conta</button>
+        <button className="button-login" onClick={() => navigate("/")}>Criar conta</button>
         <span className="forgot-password">
           <RiUserHeartLine style={{ marginRight: 5 }} />
           Já possui uma conta?{" "}

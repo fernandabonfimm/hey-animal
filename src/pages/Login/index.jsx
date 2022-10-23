@@ -43,7 +43,7 @@ const Login = () => {
           <AiOutlineKey style={{ marginRight: 5 }} />
           Esqueceu sua senha?
         </span>
-        <button className="button-login">Fazer Login</button>
+        <button className="button-login" onClick={() => navigate("/dashboard")}>Fazer Login</button>
         <span className="forgot-password">
           <AiOutlineUserAdd style={{ marginRight: 5 }} />
           Ainda não possui uma conta?{" "}
