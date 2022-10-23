@@ -153,7 +153,7 @@ const ChartMoreAxes = () => {
       },
     ],
   };
-  return <DualAxes width={550} height={300} {...config} />;
+  return <DualAxes height={300} {...config} />;
 };
 
 export default ChartMoreAxes;

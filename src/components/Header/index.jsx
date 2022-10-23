@@ -24,7 +24,7 @@ const HeaderComponent = () => {
         </button>
         <button className="buttonDashboard" onClick={() => navigate("/forms")}>
           <MdOutlineBiotech style={{ marginRight: 10, fontSize: 20 }} />
-          Formúlario
+          Formulário
         </button>
         <Avatar
           onClick={() => navigate("/profile")}

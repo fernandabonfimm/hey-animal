@@ -6,3 +6,13 @@
     box-shadow: rgb(205, 225, 248) 0px 5px 20px;
     margin-bottom: 20px;
 }
+
+.title-chart{
+    color: #000;
+    font-size: 18px;
+    font-weight: 500;
+    cursor: pointer;
+}
+.title-chart:hover{
+    color: #72aaf7;
+}

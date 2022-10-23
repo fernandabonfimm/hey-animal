@@ -1,6 +1,6 @@
 import React from "react";
 import Base from "../../components/BaseLayout";
-import { RiDashboard3Line } from "react-icons/ri";
+import { MdOutlineDashboard } from "react-icons/md";
 import { Row, Col, Card } from "antd";
 import ChartDualAxes from "./components/ChartDualAxes";
 import ChartMoreAxes from "./components/ChartMoreAxes";
@@ -12,7 +12,7 @@ const Home = () => {
     <>
       <Base
         goTo={"/"}
-        Icon={<RiDashboard3Line />}
+        Icon={<MdOutlineDashboard />}
         goToName={"Dashboard"}
         titlepage={"à Dashboard"}
         nameofuser={"Fernanda Bonfim"}
@@ -21,12 +21,30 @@ const Home = () => {
             <Row gutter={[32, 22]}>
               <Col xs={24} xl={12}>
                 <Card className="card-charts">
-                  <ChartDualAxes />
+                  <Row gutter={[32, 22]}>
+                    <Col xs={24} xl={24}>
+                      <span className="title-chart">
+                        Gráfico esperado pelo professor:
+                      </span>
+                    </Col>
+                    <Col xs={24} xl={24}>
+                      <ChartDualAxes />
+                    </Col>
+                  </Row>
                 </Card>
               </Col>
               <Col xs={24} xl={12}>
                 <Card className="card-charts">
-                  <ChartMoreAxes />
+                  <Row gutter={[32, 22]}>
+                    <Col xs={24} xl={24}>
+                      <span className="title-chart">
+                        Gráfico representado pelo aluno:
+                      </span>
+                    </Col>
+                    <Col xs={24} xl={24}>
+                      <ChartMoreAxes />
+                    </Col>
+                  </Row>
                 </Card>
               </Col>
               <Col xs={24} xl={24}>
