@@ -16,9 +16,9 @@ const HeaderComponent = () => {
           src={LogoHA}
           name="logo"
           className="logo-header"
-          onClick={() => navigate("/")}
+          onClick={() => navigate("/dashboard")}
         />
-        <button className="buttonDashboard" onClick={() => navigate("/")}>
+        <button className="buttonDashboard" onClick={() => navigate("/dashboard")}>
           <MdOutlineDashboard style={{ marginRight: 10, fontSize: 20 }} />
           Dashboard
         </button>

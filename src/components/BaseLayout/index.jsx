@@ -19,7 +19,7 @@ const Base = ({ children, goTo, Icon, goToName, titlepage, nameofuser }) => {
             <Row>
               <Col xs={24} xl={24}>
                 <Breadcrumb>
-                  <Breadcrumb.Item onClick={() => navigate("/")}>
+                  <Breadcrumb.Item onClick={() => navigate("/dashboard")}>
                     <RiHomeHeartLine />
                   </Breadcrumb.Item>
                   <Breadcrumb.Item onClick={() => navigate(goTo)}>

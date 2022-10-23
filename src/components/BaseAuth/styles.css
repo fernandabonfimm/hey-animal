@@ -1,0 +1,10 @@
+.content-pages {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  background-image: url("../../contentimg.png");
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-position: center;
+}

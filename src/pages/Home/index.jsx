@@ -11,7 +11,7 @@ const Home = () => {
   return (
     <>
       <Base
-        goTo={"/"}
+        goTo={"/dashboard"}
         Icon={<MdOutlineDashboard />}
         goToName={"Dashboard"}
         titlepage={"à Dashboard"}
