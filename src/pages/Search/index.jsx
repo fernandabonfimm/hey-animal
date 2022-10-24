@@ -71,9 +71,8 @@ const Search = () => {
                         <input
                           id="type"
                           name="type"
-                          className="start input-forms"
+                          className="margin start input-forms"
                           placeholder="Ex: ml"
-                          style={{ marginLeft: 10 }}
                           value={type}
                           onChange={(e) => setType(e.target.value)}
                         />
@@ -100,9 +99,8 @@ const Search = () => {
                         <input
                           id="type"
                           name="type"
-                          className="start input-forms"
+                          className="margin start input-forms"
                           placeholder="Ex: ml/h"
-                          style={{ marginLeft: 10 }}
                           value={variant}
                           onChange={(e) => setVariant(e.target.value)}
                         />
@@ -129,9 +127,8 @@ const Search = () => {
                         <input
                           id="type"
                           name="type"
-                          className="start input-forms"
+                          className="margin start input-forms"
                           placeholder="Ex: ml/h"
-                          style={{ marginLeft: 10 }}
                           value={variantNo}
                           onChange={(e) => setVariantNo(e.target.value)}
                         />

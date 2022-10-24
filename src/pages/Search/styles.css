@@ -108,8 +108,14 @@
   background: linear-gradient(110.55deg, #72aaf7 21.22%, #74d569 68.3%);
 }
 
+.margin{
+  margin-left: 10px;
+}
 @media screen and (max-width: 900px){
   .btn-save{
     width: 100%;
+  }
+  .margin{
+    margin-left: 0px;
   }
 }
