@@ -56,11 +56,20 @@
 
 .charts-img{
   display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
+  justify-content: flex-end;
+  align-items: flex-end;
+  text-align: flex-end;
   cursor: pointer;
   width: 15em;
+}
+
+@media screen and (max-width: 900px){
+  .charts-img{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
 }
 
 @media screen and (max-width: 500px){
@@ -69,5 +78,30 @@
   }
   .gotodash{
     width: 100%;
+  }
+}
+
+@media screen and (max-width: 360px){
+  .charts-img{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 10em;
+  }
+  .gotodash{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0.5em;
+    width: 100%;
+    font-size: 15px;
+  }
+  .title-announcement{
+    font-size: 18px;
+  }
+  .descr-announcement{
+    font-size: 13px;
   }
 }

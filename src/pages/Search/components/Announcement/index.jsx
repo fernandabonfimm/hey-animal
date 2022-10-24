@@ -12,7 +12,7 @@ const Announcement = () => {
       <Col xs={24} xl={24}>
         <Card className="announcement">
           <Row gutter={[32, 22]}>
-            <Col xs={24} xl={18}>
+            <Col xs={20} xl={18}>
               <span className="descr-announcement">
                 Após finalizar a sua nova pesquisa na aba de "Nova Pesquisa",
                 preencha o forumlário com os dados corretamente, e
@@ -31,7 +31,7 @@ const Announcement = () => {
                 Verificar Gráfico
               </button>
             </Col>
-            <Col xs={24} xl={6}>
+            <Col xs={20} xl={6}>
               <img
                 src={ChartImg}
                 className="charts-img"

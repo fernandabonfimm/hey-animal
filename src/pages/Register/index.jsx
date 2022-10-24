@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import BaseAuth from "../../components/BaseAuth";
 import { useNavigate } from "react-router-dom";
-import { Card, Input } from "antd";
+import { Card, Input, message } from "antd";
 import LogoHA from "../../logoHA.png";
 import { RiUserHeartLine } from "react-icons/ri";
 import "./styles.css";
@@ -12,6 +12,7 @@ const Register = () => {
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
   const [confirmPassword, setConfirmPassword] = useState();
+  const [user, setUser] = useState({});
 
   const profile = [
     { label: "Estudante", value: "student" },
@@ -22,6 +23,44 @@ const Register = () => {
     { label: "Médicina Veterinária", value: "vet-med" },
     { label: "Ciência da Computação", value: "computer-science" },
   ];
+
+  const saveUser = (e) => {
+    if (!user.name == "null" || "") {
+      message.error("Por favor, insira seu nome completo!");
+    } else if (
+      !user.email.match(`^\\w+([\\.-]?\\w+)*@\\w+([\\.-]?\\w+)*(\\.\\w{2,3})+$`)
+    ) {
+      message.error(
+        "Por favor, verifique o campo de e-mail se ele está correto, insira o @ e endereço!"
+      );
+    } else if (
+      !user.password.match(
+        `^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[@$!%*?&#])[A-Za-z\\d@$!%*?&#]{8,}$`
+      )
+    ) {
+      message.error(
+        "Por favor, verifique o campo de senha, insira uma letra maiúscula, minúscula e caracter especial!"
+      );
+    } else if (!user.password != confirmPassword) {
+      message.error("As senhas não se coincidem, por favor verifique!");
+    } else if (profile.values == null || "") {
+      message.error("Escolha um tipo de perfil");
+    } else if (course.values == null || "") {
+      message.error("Escolha um tipo de curso");
+    } else {
+      e.preventDefault()
+        .then((result) => {
+          message
+            .error("Usuário criado com sucesso!")
+            .then(() => navigate("/"));
+        })
+        .catch(() => {
+          message.error(
+            "Já existe um usuário cadastrado na plataforma com esse e-mail!"
+          );
+        });
+    }
+  };
   return (
     <BaseAuth>
       <Card className="card-login">
@@ -38,8 +77,8 @@ const Register = () => {
           placeholder="Digite seu nome completo..."
           id="name"
           className="input-login"
-          value={name}
-          onChange={(e) => setName(e.target.value)}
+          value={user.name}
+          onChange={(e) => setName({...user, name:e.target.value})}
         />
         <span className="label-input">E-mail:</span>
         <Input
@@ -48,26 +87,20 @@ const Register = () => {
           id="email"
           className="input-login"
           value={email}
-          onChange={(e) => setEmail(e.target.value)}
+          onChange={(e) => setEmail({...user, email:e.target.value})}
         />
         <span className="label-input">Tipo de Perfil:</span>
-        <select
-          id="profile-type"
-          className="input-login"
-        >
+        <select id="profile-type" className="input-login">
           <option value="">Selecione</option>
           {profile.map((data) => {
             return <option value={data.value}>{data.label}</option>;
           })}
         </select>
         <span className="label-input">Curso:</span>
-        <select
-          id="profile-type"
-          className="input-login"
-        >
+        <select id="profile-type" className="input-login">
           <option value="">Selecione</option>
           {course.map((data) => {
-             return <option value={data.value}>{data.label}</option>;
+            return <option value={data.value}>{data.label}</option>;
           })}
         </select>
         <span className="label-input">Senha:</span>
@@ -75,8 +108,8 @@ const Register = () => {
           placeholder="Crie uma senha..."
           id="password"
           className="input-login"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
+          value={user.password}
+          onChange={(e) => setPassword({...user, passowrd:e.target.value})}
         />
         <span className="label-input">Confirme a Senha:</span>
         <Input.Password
@@ -86,7 +119,7 @@ const Register = () => {
           value={confirmPassword}
           onChange={(e) => setConfirmPassword(e.target.value)}
         />
-        <button className="button-login" onClick={() => navigate("/")}>
+        <button className="button-login" onClick={saveUser}>
           Criar conta
         </button>
         <span className="forgot-password">
