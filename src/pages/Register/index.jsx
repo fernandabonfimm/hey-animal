@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 import BaseAuth from "../../components/BaseAuth";
-import { useNavigate } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import { Card, Input, message } from "antd";
 import LogoHA from "../../logoHA.png";
 import { RiUserHeartLine } from "react-icons/ri";
 import "./styles.css";
 
 const Register = () => {
-  const navigate = useNavigate();
+  const history = useHistory();
   const [name, setName] = useState();
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
@@ -52,7 +52,7 @@ const Register = () => {
         .then((result) => {
           message
             .error("Usuário criado com sucesso!")
-            .then(() => navigate("/"));
+            .then(() => history.push("/"));
         })
         .catch(() => {
           message.error(
@@ -73,7 +73,6 @@ const Register = () => {
         </span>
         <span className="label-input">Nome Completo:</span>
         <Input
-          type="name"
           placeholder="Digite seu nome completo..."
           id="name"
           className="input-login"
@@ -82,11 +81,10 @@ const Register = () => {
         />
         <span className="label-input">E-mail:</span>
         <Input
-          type="email"
           placeholder="example@example.com"
           id="email"
           className="input-login"
-          value={email}
+          value={user.email}
           onChange={(e) => setEmail({...user, email:e.target.value})}
         />
         <span className="label-input">Tipo de Perfil:</span>
@@ -125,7 +123,7 @@ const Register = () => {
         <span className="forgot-password">
           <RiUserHeartLine style={{ marginRight: 5 }} />
           Já possui uma conta?{" "}
-          <a onClick={() => navigate("/")} className="link-register">
+          <a onClick={() => history.push("/")} className="link-register">
             Fazer Login
           </a>
         </span>

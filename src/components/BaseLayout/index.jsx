@@ -2,14 +2,14 @@ import React from "react";
 import HeaderComponent from "../Header";
 import FooterComponent from "../Footer";
 import { Layout, Row, Col, Breadcrumb, Card } from "antd";
-import { useNavigate } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import { RiHomeHeartLine } from "react-icons/ri";
 import "./styles.css";
 
 const { Content } = Layout;
 
 const Base = ({ children, goTo, Icon, goToName, titlepage, nameofuser }) => {
-  const navigate = useNavigate();
+  const history = useHistory();
   return (
     <>
       <Layout style={{ minHeight: "100vh" }}>
@@ -19,10 +19,10 @@ const Base = ({ children, goTo, Icon, goToName, titlepage, nameofuser }) => {
             <Row>
               <Col xs={24} xl={24}>
                 <Breadcrumb>
-                  <Breadcrumb.Item onClick={() => navigate("/dashboard")}>
+                  <Breadcrumb.Item onClick={() => history.push("/dashboard")}>
                     <RiHomeHeartLine />
                   </Breadcrumb.Item>
-                  <Breadcrumb.Item onClick={() => navigate(goTo)}>
+                  <Breadcrumb.Item onClick={() => history.push(goTo)}>
                     {Icon}
                     <span>{goToName}</span>
                   </Breadcrumb.Item>

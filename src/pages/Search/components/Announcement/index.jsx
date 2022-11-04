@@ -1,12 +1,12 @@
 import React from "react";
 import { Row, Col, Card } from "antd";
 import "./styles.css";
-import { useNavigate } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import { GrPieChart } from "react-icons/gr";
 import ChartImg from "../../../../charts.png";
 
 const Announcement = () => {
-  const navigate = useNavigate();
+  const history = useHistory();
   return (
     <Row>
       <Col xs={24} xl={24}>
@@ -25,7 +25,7 @@ const Announcement = () => {
               </span>
               <button
                 className="gotodash"
-                onClick={() => navigate("/dashboard")}
+                onClick={() => history.push("/dashboard")}
               >
                 <GrPieChart style={{ marginRight: 10 }} />
                 Verificar Gráfico
@@ -36,7 +36,7 @@ const Announcement = () => {
                 src={ChartImg}
                 className="charts-img"
                 name="chartsimg"
-                onClick={() => navigate("/dashboard")}
+                onClick={() => history.push("/dashboard")}
               />
             </Col>
           </Row>

@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import BaseAuth from "../../components/BaseAuth";
-import { useNavigate } from "react-router-dom";
 import { Card, Input, message } from "antd";
 import LogoHA from "../../logoHA.png";
 import ErrorMessageInput from "../../components/ErrorMessageInput";
@@ -8,7 +7,6 @@ import SucessMessageInput from "../../components/SucessMessageInput";
 import "./styles.css";
 
 const ForgotPassword = () => {
-  const navigate = useNavigate();
   const [email, setEmail] = useState();
   const [emailError, setEmailError] = useState();
   const [emailSucess, setEmailSucess] = useState();
